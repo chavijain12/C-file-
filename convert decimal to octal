@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int decimal, octal = 0, place = 1, rem;
+
+    cout << "Enter a decimal number: ";
+    cin >> decimal;
+
+    while (decimal > 0) {
+        rem = decimal % 8;          // remainder
+        octal = octal + rem * place;
+        place = place * 10;
+        decimal = decimal / 8;
+    }
+
+    cout << "Octal value = " << octal;
+
+    return 0;
+}
