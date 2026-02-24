@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, digit;
+    cout << "Enter a number: ";
+    cin >> num;
+
+    num = abs(num);          // agar negative ho to positive bana lo
+    int smallest = 9;        // max digit se start
+
+    while (num > 0) {
+        digit = num % 10;    // last digit
+        if (digit < smallest) {
+            smallest = digit;
+        }
+        num = num / 10;      // last digit remove
+    }
+
+    cout << "Smallest digit = " << smallest;
+
+    return 0;
+}
