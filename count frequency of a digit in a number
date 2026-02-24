@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int num, digit, count = 0, rem;
+
+    cout << "Enter a number: ";
+    cin >> num;
+    cout << "Enter digit to find frequency: ";
+    cin >> digit;
+
+    num = abs(num);   // negative number handle
+
+    while (num > 0) {
+        rem = num % 10;      // last digit
+        if (rem == digit) {
+            count++;
+        }
+        num = num / 10;     // last digit remove
+    }
+
+    cout << "Frequency of " << digit << " = " << count;
+
+    return 0;
+}
